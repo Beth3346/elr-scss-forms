@@ -19,3 +19,7 @@
 /test
 /Gruntfile.js
 /gulpfile.js
+/dist/index.html
+/dist/style.css
+/style.scss
+/forms.scss
