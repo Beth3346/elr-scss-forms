@@ -1,5 +1,430 @@
 @import 'node_modules/elr-scss-functions/main';
-@import 'src/form-elements';
-// @import 'src/form-inputs';
-@import 'src/forms';
-// @import 'src/passwords';
+@import 'node_modules/elr-scss-buttons/src/buttons';
+
+@mixin elr-form($config: ()) {
+  $config: extend(
+    (
+      bk-color: #eee,
+      border-color: #ccc,
+      button-color: #1976d2
+    ),
+    $config
+  );
+
+  $bk-color: map-get($config, bk-color);
+  $border-color: map-get($config, border-color);
+  $button-color: map-get($config, button-color);
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+
+  .elr-form-row {
+    display: flex;
+  }
+
+  .elr-input-group {
+    width: 100%;
+    padding: 10px;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+
+  small {
+    display: block;
+    color: #333;
+    margin: 0 0 20px 5px;
+    padding: 0;
+  }
+
+  label {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  label,
+  input,
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+  }
+
+  input,
+  textarea,
+  select {
+    border: 1px solid $border-color;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: $bk-color;
+    transition: border-color 0.3s, background-color 0.3s;
+
+    &:focus {
+      border-color: $button-color;
+      background-color: #fff;
+    }
+
+    &.hidden-field {
+      display: none;
+    }
+  }
+
+  input,
+  textarea {
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+
+  select {
+    margin: 0;
+    padding: 0 10px;
+    height: 33px;
+  }
+
+  .elr-select-wrapper {
+    @include elr-select;
+  }
+
+  [type='text'],
+  [type='tel'],
+  [type='email'],
+  [type='password'],
+  [type='url'],
+  textarea,
+  select:not([type='multiple']) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  [multiple] {
+    height: auto;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    display: inline;
+    padding: 4px 4px 0 0;
+  }
+
+  .elr-control-label {
+    margin: 0;
+    padding: 5px 0 0;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .elr-control-group {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    label {
+      width: auto;
+      padding: 0;
+      line-height: normal;
+      vertical-align: middle;
+      margin: 10px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    [type='checkbox'],
+    [type='radio'] {
+      width: auto;
+      margin: 10px;
+      padding: 0;
+    }
+  }
+
+  [type='submit'],
+  [type='button'],
+  button,
+  [type='submit'][disabled],
+  button[disabled] {
+    @include elr-button;
+    margin: 10px 0;
+  }
+
+  [type='submit'][disabled],
+  button[disabled] {
+    background-color: #999;
+    border-color: #999;
+
+    &:hover {
+      cursor: not-allowed;
+      background-color: #999;
+      border-color: #999;
+      color: #fff;
+      transition: none;
+    }
+  }
+}
+
+@mixin elr-form-status($config: ()) {
+  $config: extend(
+    (
+      color: $lighter-grey
+    ),
+    $config
+  );
+
+  $color: map-get($config, color);
+
+  background-color: lighten($color, 30%);
+  border: 1px solid $color;
+  transition: border 0.5s, box-shadow 0.5s;
+
+  &:hover {
+    border: 1px solid $color;
+    box-shadow: 0 0 2px $color;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid darken($color, 20%);
+    background-color: $white;
+  }
+}
+
+@mixin elr-form-notice($config: ()) {
+  $config: extend(
+    (
+      type: 'info',
+      font-size: 12px
+    ),
+    $config
+  );
+
+  $type: map-get($config, type);
+  $font-size: map-get($config, font-size);
+
+  font-size: to-rems($font-size);
+  margin: 5px 0;
+  padding: 0;
+
+  @if ($type == 'success') {
+    color: $success-color;
+  } @else if ($type == 'warning') {
+    color: $warning-color;
+  } @else if ($type == 'danger') {
+    color: $danger-color;
+  } @else {
+    color: $info-color;
+  }
+}
+
+@mixin elr-form-state($config: ()) {
+  $config: extend(
+    (
+      bk-color: $lightest-grey,
+      border: $grey
+    ),
+    $config
+  );
+
+  $bk-color: map-get($config, bk-color);
+  $border: map-get($config, border);
+
+  background-color: $bk-color;
+  border: 1px solid $border;
+  transition: border 0.5s, box-shadow 0.5s;
+
+  &:focus {
+    outline: none;
+    border: 1px solid darken($border, 20%);
+    background-color: lighten($bk-color, 20%);
+  }
+
+  &.elr-form-success {
+    @include elr-form-status(
+      $config: (
+        color: $success-color
+      )
+    );
+  }
+
+  &.elr-form-warning {
+    @include elr-form-status(
+      $config: (
+        color: $warning-color
+      )
+    );
+  }
+
+  &.elr-form-danger {
+    @include elr-form-status(
+      $config: (
+        color: $danger-color
+      )
+    );
+  }
+
+  &[disabled] {
+    background-color: darken($bk-color, 10%);
+    border: 1px solid darken($border, 10%);
+    transition: none;
+
+    &:hover {
+      cursor: not-allowed;
+      border: 1px solid darken($border, 10%);
+      box-shadow: none;
+      transition: none;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid darken($border, 10%);
+      background-color: darken($bk-color, 10%);
+      transition: none;
+    }
+  }
+}
+
+@mixin elr-form-notices() {
+  .form-notice-holder {
+    @include elr-clearfix;
+    float: left;
+  }
+
+  // TODO: map over notice types to DRY out code
+  p {
+    &.form-success-notice {
+      @include elr-form-notice(
+        $config: (
+          type: 'success'
+        )
+      );
+    }
+
+    &.form-warning-notice {
+      @include elr-form-notice(
+        $config: (
+          type: 'warning'
+        )
+      );
+    }
+
+    &.form-danger-notice {
+      @include elr-form-notice(
+        $config: (
+          type: 'danger'
+        )
+      );
+    }
+
+    &.form-info-notice,
+    &.form-length-notice {
+      @include elr-form-notice(
+        $config: (
+          type: 'info'
+        )
+      );
+    }
+
+    &.password-meter-danger {
+      @include elr-password-meter(
+        $config: (
+          type: 'danger'
+        )
+      );
+    }
+
+    &.password-meter-warning {
+      @include elr-password-meter(
+        $config: (
+          type: 'warning'
+        )
+      );
+    }
+
+    &.password-meter-success {
+      @include elr-password-meter(
+        $config: (
+          type: 'success'
+        )
+      );
+    }
+  }
+
+  small {
+    &.password-message-danger {
+      @include elr-form-notice(
+        $config: (
+          type: 'danger'
+        )
+      );
+    }
+
+    &.password-message-warning {
+      @include elr-form-notice(
+        $config: (
+          type: 'warning'
+        )
+      );
+    }
+
+    &.password-message-success {
+      @include elr-form-notice(
+        $config: (
+          type: 'success'
+        )
+      );
+    }
+  }
+}
+
+@mixin elr-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+}
+
+@mixin elr-select($config: ()) {
+  $config: extend(
+    (
+      icon: '\25BE',
+      font-size: 14px
+    ),
+    $config
+  );
+
+  $icon: map-get($config, icon);
+  $font-size: map-get($config, font-size);
+
+  position: relative;
+  padding: 5px 0;
+
+  &::after {
+    content: $icon;
+    font-size: 14px;
+    right: to-rems(15px);
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-55%);
+  }
+}
