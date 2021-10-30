@@ -1,12 +1,12 @@
-@import 'node_modules/elr-scss-functions/main';
-@import 'node_modules/elr-scss-buttons/src/buttons';
+@import "node_modules/elr-scss-functions/src/main";
+@import "node_modules/elr-scss-buttons/src/buttons";
 
 @mixin elr-form($config: ()) {
   $config: extend(
     (
       bk-color: #eee,
       border-color: #ccc,
-      button-color: #1976d2
+      button-color: #1976d2,
     ),
     $config
   );
@@ -92,13 +92,13 @@
     @include elr-select;
   }
 
-  [type='text'],
-  [type='tel'],
-  [type='email'],
-  [type='password'],
-  [type='url'],
+  [type="text"],
+  [type="tel"],
+  [type="email"],
+  [type="password"],
+  [type="url"],
   textarea,
-  select:not([type='multiple']) {
+  select:not([type="multiple"]) {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -110,8 +110,8 @@
     margin-top: 5px;
   }
 
-  [type='checkbox'],
-  [type='radio'] {
+  [type="checkbox"],
+  [type="radio"] {
     display: inline;
     padding: 4px 4px 0 0;
   }
@@ -141,24 +141,24 @@
       }
     }
 
-    [type='checkbox'],
-    [type='radio'] {
+    [type="checkbox"],
+    [type="radio"] {
       width: auto;
       margin: 10px;
       padding: 0;
     }
   }
 
-  [type='submit'],
-  [type='button'],
+  [type="submit"],
+  [type="button"],
   button,
-  [type='submit'][disabled],
+  [type="submit"][disabled],
   button[disabled] {
     @include elr-button;
     margin: 10px 0;
   }
 
-  [type='submit'][disabled],
+  [type="submit"][disabled],
   button[disabled] {
     background-color: #999;
     border-color: #999;
@@ -176,7 +176,7 @@
 @mixin elr-form-status($config: ()) {
   $config: extend(
     (
-      color: $lighter-grey
+      color: $lighter-grey,
     ),
     $config
   );
@@ -202,8 +202,8 @@
 @mixin elr-form-notice($config: ()) {
   $config: extend(
     (
-      type: 'info',
-      font-size: 12px
+      type: "info",
+      font-size: 12px,
     ),
     $config
   );
@@ -215,11 +215,11 @@
   margin: 5px 0;
   padding: 0;
 
-  @if ($type == 'success') {
+  @if ($type == "success") {
     color: $success-color;
-  } @else if ($type == 'warning') {
+  } @else if ($type == "warning") {
     color: $warning-color;
-  } @else if ($type == 'danger') {
+  } @else if ($type == "danger") {
     color: $danger-color;
   } @else {
     color: $info-color;
@@ -230,7 +230,7 @@
   $config: extend(
     (
       bk-color: $lightest-grey,
-      border: $grey
+      border: $grey,
     ),
     $config
   );
@@ -251,7 +251,7 @@
   &.elr-form-success {
     @include elr-form-status(
       $config: (
-        color: $success-color
+        color: $success-color,
       )
     );
   }
@@ -259,7 +259,7 @@
   &.elr-form-warning {
     @include elr-form-status(
       $config: (
-        color: $warning-color
+        color: $warning-color,
       )
     );
   }
@@ -267,7 +267,7 @@
   &.elr-form-danger {
     @include elr-form-status(
       $config: (
-        color: $danger-color
+        color: $danger-color,
       )
     );
   }
@@ -304,7 +304,7 @@
     &.form-success-notice {
       @include elr-form-notice(
         $config: (
-          type: 'success'
+          type: "success",
         )
       );
     }
@@ -312,7 +312,7 @@
     &.form-warning-notice {
       @include elr-form-notice(
         $config: (
-          type: 'warning'
+          type: "warning",
         )
       );
     }
@@ -320,7 +320,7 @@
     &.form-danger-notice {
       @include elr-form-notice(
         $config: (
-          type: 'danger'
+          type: "danger",
         )
       );
     }
@@ -329,7 +329,7 @@
     &.form-length-notice {
       @include elr-form-notice(
         $config: (
-          type: 'info'
+          type: "info",
         )
       );
     }
@@ -337,7 +337,7 @@
     &.password-meter-danger {
       @include elr-password-meter(
         $config: (
-          type: 'danger'
+          type: "danger",
         )
       );
     }
@@ -345,7 +345,7 @@
     &.password-meter-warning {
       @include elr-password-meter(
         $config: (
-          type: 'warning'
+          type: "warning",
         )
       );
     }
@@ -353,7 +353,7 @@
     &.password-meter-success {
       @include elr-password-meter(
         $config: (
-          type: 'success'
+          type: "success",
         )
       );
     }
@@ -363,7 +363,7 @@
     &.password-message-danger {
       @include elr-form-notice(
         $config: (
-          type: 'danger'
+          type: "danger",
         )
       );
     }
@@ -371,7 +371,7 @@
     &.password-message-warning {
       @include elr-form-notice(
         $config: (
-          type: 'warning'
+          type: "warning",
         )
       );
     }
@@ -379,7 +379,7 @@
     &.password-message-success {
       @include elr-form-notice(
         $config: (
-          type: 'success'
+          type: "success",
         )
       );
     }
@@ -405,8 +405,8 @@
 @mixin elr-select($config: ()) {
   $config: extend(
     (
-      icon: '\25BE',
-      font-size: 14px
+      icon: "\25BE",
+      font-size: 14px,
     ),
     $config
   );
