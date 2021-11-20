@@ -1,5 +1,5 @@
 @import "elr-scss-functions/src/main";
-@import "elr-scss-buttons/src/buttons";
+@import "elr-scss-buttons/src/main";
 
 @mixin elr-form($config: ()) {
   $config: extend(
