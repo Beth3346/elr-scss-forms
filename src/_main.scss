@@ -60,8 +60,8 @@
 
   small {
     display: block;
-    color: #333;
-    margin: 0 0 20px 5px;
+    color: $text-color;
+    margin: 0 0 16px 4px;
     padding: 0;
   }
 
@@ -93,7 +93,7 @@
     margin: 8px 0;
     padding: 12px;
     @include elr-placeholder {
-      color: #999;
+      color: $gray;
     }
 
     &:focus {
@@ -108,7 +108,7 @@
   select {
     border: 1px solid $border-color;
     font-size: 14px;
-    border-radius: 3px;
+    border-radius: $border-radius;
     background-color: $background-color;
     transition: border-color 0.3s, background-color 0.3s;
     display: block;
@@ -168,7 +168,11 @@
   [multiple] {
     height: auto;
     padding: 8px;
-    margin-top: 5px;
+    margin-top: 4px;
+
+    option {
+      padding: 4px;
+    }
   }
 
   [type="checkbox"],
