@@ -67,6 +67,7 @@
     position: relative;
     display: flex;
     padding-top: 0;
+    margin: 0;
 
     > .input-icon + [type="text"],
     > .input-icon + [type="email"],
@@ -78,6 +79,10 @@
     > .input-icon + [type="number"],
     > .input-icon + select {
       border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    > .input-icon + select {
+      margin-top: $base-fontsize * 0.5;
     }
 
     .input-icon {
