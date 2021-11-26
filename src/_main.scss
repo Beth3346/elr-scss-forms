@@ -6,7 +6,6 @@
     (
       background-color: $lightest-gray,
       border-color: $light-gray,
-      link-color: $primary-color,
       label-color: $text-color,
       border-radius: $border-radius,
     ),
@@ -15,21 +14,19 @@
 
   $background-color: map-get($config, background-color);
   $border-color: map-get($config, border-color);
-  $link-color: map-get($config, link-color);
   $label-color: map-get($config, label-color);
   $text-color: map-get($config, text-color);
   $border-radius: map-get($config, border-radius);
   $button-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   $text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: $base-fontsize;
+  padding-bottom: $base-fontsize;
   width: 100%;
   position: relative;
 
   .form-overlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    // border: $border;
+    background-color: $eggshell;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,13 +38,13 @@
     z-index: 1;
   }
 
-  .elr-form-row {
+  .form-row {
     display: flex;
   }
 
-  .elr-input-group {
+  .input-group {
     width: 100%;
-    padding: 8px;
+    padding: ($base-fontsize * 0.5);
 
     &:first-of-type {
       padding-left: 0;
@@ -61,19 +58,19 @@
   small {
     display: block;
     color: $text-color;
-    margin: 0 0 16px 4px;
+    margin: 0 0 $base-fontsize ($base-fontsize * 0.25);
     padding: 0;
   }
 
   .form-buttons p.form-disclaimer {
     margin: 0;
     padding: 0;
-    font-size: 12px; /* stylelint-disable-line declaration-property-value-allowed-list */
+    font-size: $base-fontsize * 0.75; /* stylelint-disable-line declaration-property-value-allowed-list */
   }
 
   label {
     color: $label-color;
-    font-size: 14px;
+    font-size: $base-fontsize * 0.875;
     margin: 0;
     font-weight: 700;
     letter-spacing: 1px;
@@ -90,7 +87,7 @@
 
   input:not([type="submit"]),
   textarea {
-    margin: 8px 0;
+    margin: ($base-fontsize * 0.5) 0;
     padding: 12px;
     @include elr-placeholder {
       color: $gray;
@@ -113,7 +110,7 @@
     transition: border-color 0.3s, background-color 0.3s;
     display: block;
     border-color: $border-color;
-    margin-top: 8px;
+    margin-top: ($base-fontsize * 0.5);
     width: 100%;
     color: $text-color;
     min-height: 40px;
@@ -123,7 +120,7 @@
       outline: 0;
       border: 1px solid $link-color;
       box-shadow: 0 0 2px 0 $link-color;
-      background-color: #fff;
+      background-color: $white;
     }
 
     &.hidden-field {
@@ -141,15 +138,15 @@
 
   [disabled] {
     cursor: not-allowed;
-    background-color: #ccc;
+    background-color: $light-gray;
   }
 
   select {
-    margin: 6px 0 8px 0;
+    margin: 6px 0 ($base-fontsize * 0.5) 0;
     padding: 12px;
   }
 
-  .elr-select-wrapper {
+  .select-wrapper {
     @include elr-select;
   }
 
@@ -167,39 +164,69 @@
 
   [multiple] {
     height: auto;
-    padding: 8px;
-    margin-top: 4px;
+    padding: ($base-fontsize * 0.5);
+    margin-top: ($base-fontsize * 0.25);
 
     option {
-      padding: 4px;
+      padding: ($base-fontsize * 0.25);
     }
   }
 
   [type="checkbox"],
   [type="radio"] {
     display: inline;
-    padding: 4px 4px 0 0;
+    padding: ($base-fontsize * 0.25) ($base-fontsize * 0.25) 0 0;
   }
 
-  .elr-control-label {
+  .control-label {
     margin: 0;
-    padding: 5px 0 0;
+    padding: ($base-fontsize * 0.25) 0 0;
     font-weight: 700;
-    font-size: 14px;
+    font-size: $base-fontsize;
+    letter-spacing: 1px;
   }
 
-  .elr-control-group {
-    padding: 8px 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .control-label-support {
+    color: $dark-gray;
+    font-size: 14px;
+    font-weight: 400;
+    margin: ($base-fontsize * 0.25) 0;
+  }
+
+  .control-group {
+    margin: $base-fontsize 0;
+    padding: 0;
+
+    &.control-group-inline {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 0;
+    }
+
+    .control-option {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: $base-fontsize ($base-fontsize * 0.5) $base-fontsize 0;
+
+      .control-label-support {
+        font-size: 13px;
+      }
+    }
+
+    .control-option-label {
+      margin-left: $base-fontsize * 0.5;
+    }
 
     label {
       width: auto;
       padding: 0;
-      line-height: normal;
+      margin: 0 ($base-fontsize * 0.25);
+      font-size: 14px;
+      line-height: 1;
       vertical-align: middle;
-      margin: 8px;
+      letter-spacing: 1px;
 
       &:first-child {
         margin-left: 0;
@@ -208,32 +235,34 @@
 
     [type="checkbox"],
     [type="radio"] {
+      line-height: 1;
       width: auto;
-      margin: 8px;
+      margin: 0 ($base-fontsize * 0.25);
       padding: 0;
+      min-height: 0;
     }
   }
 
-  .elr-form-buttons {
+  .form-buttons {
     display: flex;
   }
 
   [type="submit"],
-  .elr-button {
+  .button {
     background-color: $link-color;
-    color: #fff;
+    color: $white;
     border: $link-color;
     display: block;
     font-weight: 700;
-    font-size: 16px;
-    padding: 16px;
-    margin-top: 16px;
+    font-size: $base-fontsize;
+    padding: $base-fontsize;
+    margin-top: $base-fontsize;
     box-shadow: $button-shadow;
     text-shadow: $text-shadow;
     cursor: pointer;
     border-radius: $border-radius;
     min-width: 0;
-    margin-right: 16px;
+    margin-right: $base-fontsize;
     width: 200px;
     transition: color 0.3s, border-color 0.3s, background-color 0.3s;
 
@@ -246,17 +275,14 @@
     &:disabled,
     &:disabled:hover {
       cursor: not-allowed;
-      border-color: desaturate($link-color, 15%);
-      background-color: desaturate($link-color, 15%);
+      border-color: desaturate(lighten($link-color, 10%), 30%);
+      background-color: desaturate(lighten($link-color, 10%), 30%);
     }
 
     &:hover:not(:disabled) {
-      color: #fff;
-      // background-color: $primary-color-light;
-      // border-color: $primary-color-light;
+      color: $white;
       transition: transform 0.1s ease-out;
       transform: translateY(-2px);
-      // box-shadow: $button-shadow;
     }
   }
 }
@@ -284,100 +310,6 @@
     outline: none;
     border: 1px solid darken($color, 20%);
     background-color: $white;
-  }
-}
-
-@mixin elr-form-notice($config: ()) {
-  $config: extend(
-    (
-      type: "info",
-      font-size: 12px,
-    ),
-    $config
-  );
-
-  $type: map-get($config, type);
-  $font-size: map-get($config, font-size);
-
-  font-size: to-rems($font-size);
-  margin: 5px 0;
-  padding: 0;
-
-  @if ($type == "success") {
-    color: $success-color;
-  } @else if ($type == "warning") {
-    color: $warning-color;
-  } @else if ($type == "danger") {
-    color: $danger-color;
-  } @else {
-    color: $info-color;
-  }
-}
-
-@mixin elr-form-state($config: ()) {
-  $config: extend(
-    (
-      background-color: $lightest-grey,
-      border: $grey,
-    ),
-    $config
-  );
-
-  $background-color: map-get($config, background-color);
-  $border: map-get($config, border);
-
-  background-color: $background-color;
-  border: 1px solid $border;
-  transition: border 0.5s, box-shadow 0.5s;
-
-  &:focus {
-    outline: none;
-    border: 1px solid darken($border, 20%);
-    background-color: lighten($background-color, 20%);
-  }
-
-  &.elr-form-success {
-    @include elr-form-status(
-      $config: (
-        color: $success-color,
-      )
-    );
-  }
-
-  &.elr-form-warning {
-    @include elr-form-status(
-      $config: (
-        color: $warning-color,
-      )
-    );
-  }
-
-  &.elr-form-danger {
-    @include elr-form-status(
-      $config: (
-        color: $danger-color,
-      )
-    );
-  }
-
-  &[disabled] {
-    background-color: darken($background-color, 10%);
-    border: 1px solid darken($border, 10%);
-    transition: none;
-
-    &:hover {
-      cursor: not-allowed;
-      border: 1px solid darken($border, 10%);
-      box-shadow: none;
-      transition: none;
-    }
-
-    &:focus {
-      outline: none;
-      border: 1px solid darken($border, 10%);
-      background-color: darken($background-color, 10%);
-      transition: none;
-    }
   }
 }
 
@@ -420,7 +352,7 @@
     pointer-events: none;
     position: absolute;
     top: 50%;
-    right: 8px;
+    right: ($base-fontsize * 0.5);
     transform: translateY(-55%);
   }
 }

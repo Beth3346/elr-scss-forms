@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html lang="en-US">
-  <!--<![endif]-->
-
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,30 +20,24 @@
   </head>
 
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
     <div class="wrapper">
       <div class="content-holder">
         <h1 class="main-heading">Forms</h1>
-        <div class="example-holder">
-          <h2 class="sub-heading">Basic Form</h2>
-          <form action="" class="elr-form">
-            <div class="elr-form-row">
-              <div class="elr-input-group">
+        <div class="demo-content">
+          <h2 class="subheading">Basic Form</h2>
+          <form class="form">
+            <div class="form-row">
+              <div class="input-group">
                 <label for="fav-animal">Favorite Animal</label>
                 <input id="fav-animal" type="text" placeholder="penguins" />
               </div>
-              <div class="elr-input-group">
+              <div class="input-group">
                 <label for="fav-place">Favorite Place</label>
                 <input id="fav-place" type="text" placeholder="Italy" />
               </div>
             </div>
-            <div class="elr-form-row">
-              <div class="elr-input-group">
+            <div class="form-row">
+              <div class="input-group">
                 <label for="phone-number">Phone:</label>
                 <input
                   id="phone-number"
@@ -57,7 +45,7 @@
                   placeholder="555-555-5555"
                 />
               </div>
-              <div class="elr-input-group">
+              <div class="input-group">
                 <label for="email-address">Email Address</label>
                 <input
                   id="email-address"
@@ -66,30 +54,30 @@
                 />
               </div>
             </div>
-            <div class="elr-form-row">
-              <div class="elr-input-group">
+            <div class="form-row">
+              <div class="input-group">
                 <label for="url">Website:</label>
                 <input id="url" type="url" placeholder="http://www.foo.com" />
               </div>
-              <div class="elr-input-group">
+              <div class="input-group">
                 <label for="password">Password</label>
                 <input id="password" type="password" placeholder="password" />
               </div>
-              <div class="elr-input-group">
+              <div class="input-group">
                 <label for="age">Age:</label>
                 <input type="number" placeholder="32" />
               </div>
             </div>
-            <div class="elr-form-row">
-              <div class="elr-input-group">
+            <div class="form-row">
+              <div class="input-group">
                 <label for="birthday">Birthday:</label>
                 <input type="date" id="birthday" />
               </div>
             </div>
-            <div class="elr-form-row">
-              <div class="elr-input-group">
+            <div class="form-row">
+              <div class="input-group">
                 <label for="colors">Pick a Color:</label>
-                <div class="elr-select-wrapper">
+                <div class="select-wrapper">
                   <select name="colors" id="colors">
                     <option value="1">Green</option>
                     <option value="2">Blue</option>
@@ -99,7 +87,7 @@
                   </select>
                 </div>
               </div>
-              <div class="elr-input-group">
+              <div class="input-group">
                 <label for="colors">Pick a Color:</label>
                 <select multiple name="colors" id="colors">
                   <option value="1">Green</option>
@@ -110,35 +98,151 @@
                 </select>
               </div>
             </div>
-            <div class="elr-form-row">
-              <div class="elr-input-group">
+            <div class="form-row">
+              <div class="input-group">
                 <label for="comment">Comment:</label>
                 <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
               </div>
             </div>
-            <div class="elr-form-row">
-              <div class="elr-input-group">
-                <p class="elr-control-label">Do you like cats?</p>
-                <div class="elr-control-group">
-                  <label for="yes">Yes: </label>
-                  <input name="cats" id="yes" value="yes" type="checkbox" />
-                  <label for="no">No: </label>
-                  <input name="cats" id="no" value="no" type="checkbox" />
+            <div class="form-row">
+              <div class="input-group">
+                <h2 class="subheading">Checkbox Option List</h2>
+                <h3 class="control-label">Animals</h3>
+                <p class="control-label-support">What are your favorite animals?</p>
+                <div class="control-group">
+                  <div class="control-option">
+                    <input name="animal" id="cats" value="cats" type="checkbox" />
+                    <label for="cats">Cats</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal" id="dogs" value="dogs" type="checkbox" />
+                    <label for="dogs">Dogs</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal" id="horses" value="horses" type="checkbox" />
+                    <label for="horses">Horses</label>
+                  </div>
                 </div>
               </div>
-              <div class="elr-input-group">
-                <p class="elr-control-label">Do you like dogs?</p>
-                <div class="elr-control-group">
-                  <label for="yes-dogs">Yes: </label>
-                  <input id="yes-dogs" name="dogs" value="yes" type="radio" />
-                  <label for="no-dogs">No: </label>
-                  <input id="no-dogs" name="dogs" value="no" type="radio" />
+              <div class="input-group">
+                <h2 class="subheading">Radio Option List</h2>
+                <h3 class="control-label">Animals</h3>
+                <p class="control-label-support">What are your favorite animals?</p>
+                <div class="control-group">
+                  <div class="control-option">
+                    <input name="animal2" id="cats2" value="cats2" type="radio" />
+                    <label for="cats2">Cats</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal2" id="dogs2" value="dogs2" type="radio" />
+                    <label for="dogs2">Dogs</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal2" id="horses2" value="horses2" type="radio" />
+                    <label for="horses2">Horses</label>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="elr-form-buttons">
-                <button type="submit" class="elr-button">Submit</button>
-                <button type="submit" disabled class="elr-button">
+            <div class="form-row">
+              <div class="input-group">
+                <h2 class="subheading">Checkbox Option List with Description</h2>
+                <h3 class="control-label">Items</h3>
+                <p class="control-label-support">What are your favorite animals?</p>
+                <div class="control-group">
+                  <div class="control-option">
+                    <input name="items" id="item1" value="item1" type="checkbox" />
+                    <label for="item1" class="control-option-label">
+                      <p>Item 1</p>
+                      <p class="control-label-support">Item 1 description</p>
+                    </label>
+                  </div>
+                  <div class="control-option">
+                    <input name="items" id="item2" value="item2" type="checkbox" />
+                    <label for="item2" class="control-option-label">
+                      <p>Item 2</p>
+                      <p class="control-label-support">Item 2 description</p>
+                    </label>
+                  </div>
+                  <div class="control-option">
+                    <input name="items" id="item3" value="item3" type="checkbox" />
+                    <label for="item3" class="control-option-label">
+                      <p>Item 3</p>
+                      <p class="control-label-support">Item 3 description</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <h2 class="subheading">Radio Option List with Description</h2>
+                <h3 class="control-label">Items</h3>
+                <p class="control-label-support">What are your favorite animals?</p>
+                <div class="control-group">
+                  <div class="control-option">
+                    <input name="items2" id="item4" value="item4" type="radio" />
+                    <label for="item4" class="control-option-label">
+                      <p>Item 1</p>
+                      <p class="control-label-support">Item 1 description</p>
+                    </label>
+                  </div>
+                  <div class="control-option">
+                    <input name="items2" id="item5" value="item5" type="radio" />
+                    <label for="item5" class="control-option-label">
+                      <p>Item 2</p>
+                      <p class="control-label-support">Item 2 description</p>
+                    </label>
+                  </div>
+                  <div class="control-option">
+                    <input name="items2" id="item6" value="item6" type="radio" />
+                    <label for="item6" class="control-option-label">
+                      <p>Item 3</p>
+                      <p class="control-label-support">Item 3 description</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input-group">
+                <h3 class="control-label">Animals</h3>
+                <p class="control-label-support">What are your favorite animals?</p>
+                <div class="control-group control-group-inline">
+                  <div class="control-option">
+                    <input name="animal3" id="cats3" value="cats3" type="checkbox" />
+                    <label for="cats3">Cats</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal3" id="dogs3" value="dogs3" type="checkbox" />
+                    <label for="dogs3">Dogs</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal3" id="horses3" value="horses3" type="checkbox" />
+                    <label for="horses3">Horses</label>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group">
+                <h3 class="control-label">Animals</h3>
+                <p class="control-label-support">What are your favorite animals?</p>
+                <div class="control-group control-group-inline">
+                  <div class="control-option">
+                    <input name="animal4" id="cats4" value="cats4" type="radio" />
+                    <label for="cats4">Cats</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal4" id="dogs4" value="dogs4" type="radio" />
+                    <label for="dogs4">Dogs</label>
+                  </div>
+                  <div class="control-option">
+                    <input name="animal4" id="horses4" value="horses4" type="radio" />
+                    <label for="horses4">Horses</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="button">Submit</button>
+                <button type="submit" disabled class="button">
                   Can't Click Here
                 </button>
             </div>
