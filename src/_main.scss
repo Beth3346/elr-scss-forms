@@ -106,10 +106,16 @@
     padding: 0;
   }
 
-  .form-buttons p.form-disclaimer {
-    margin: 0;
-    padding: 0;
-    font-size: $base-fontsize * 0.75; /* stylelint-disable-line declaration-property-value-allowed-list */
+  .form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    p.form-disclaimer {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: $base-fontsize * 0.75; /* stylelint-disable-line declaration-property-value-allowed-list */
+    }
   }
 
   label {
@@ -342,10 +348,6 @@
     font-weight: 400;
     margin: ($base-fontsize * 0.25) 0;
     letter-spacing: 0;
-  }
-
-  .form-buttons {
-    display: flex;
   }
 
   [type="submit"],
