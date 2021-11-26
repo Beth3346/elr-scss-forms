@@ -11,7 +11,22 @@ Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't 
 
 ```sh
 npm install elr-scss-forms --save
+```
+
+or
+
+```sh
 yarn add elr-scss-forms
+```
+
+## Implementation
+
+```scss
+@import "elr-scss-form/src/main";
+
+.form {
+  @include elr-form;
+}
 ```
 
 ## License

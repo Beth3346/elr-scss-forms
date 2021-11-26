@@ -29,49 +29,81 @@
             <div class="form-row">
               <div class="input-group">
                 <label for="fav-animal">Favorite Animal</label>
-                <input id="fav-animal" type="text" placeholder="penguins" />
+                <div class="input-wrapper">
+                  <span class="input-icon"><i class="fa fa-lock"></i></span>
+                  <input id="fav-animal" type="text" placeholder="penguins" />
+                </div>
+                <small class="input-helper-text">This is some helper text</small>
               </div>
               <div class="input-group">
                 <label for="fav-place">Favorite Place</label>
-                <input id="fav-place" type="text" placeholder="Italy" />
+                <div class="input-wrapper">
+                  <input id="fav-place" type="text" placeholder="Italy" />
+                </div>
               </div>
             </div>
             <div class="form-row">
               <div class="input-group">
                 <label for="phone-number">Phone:</label>
-                <input
-                  id="phone-number"
-                  type="tel"
-                  placeholder="555-555-5555"
-                />
+                <div class="input-wrapper">
+                  <input
+                    id="phone-number"
+                    type="tel"
+                    placeholder="555-555-5555"
+                  />
+                </div>
               </div>
               <div class="input-group">
                 <label for="email-address">Email Address</label>
-                <input
-                  id="email-address"
-                  type="email"
-                  placeholder="foo@bar.com"
-                />
+                <div class="input-wrapper">                  
+                  <input
+                    id="email-address"
+                    type="email"
+                    placeholder="foo@bar.com"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="input-group">
+                <label for="search">Search</label>
+                <div class="input-wrapper">                  
+                  <input
+                    id="search"
+                    type="search"
+                  />
+                </div>
               </div>
             </div>
             <div class="form-row">
               <div class="input-group">
                 <label for="url">Website:</label>
-                <input id="url" type="url" placeholder="http://www.foo.com" />
+                <div class="input-wrapper">
+                  <span class="input-icon">http://</span>
+                  <input id="url" type="url" placeholder="www.foo.com" />
+                </div>
               </div>
+            </div>
+            <div class="form-row">
               <div class="input-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="password" />
+                <div class="input-wrapper">
+                  <input id="password" type="password" placeholder="password" />
+                </div>
               </div>
               <div class="input-group">
                 <label for="age">Age:</label>
-                <input type="number" placeholder="32" />
+                <div class="input-wrapper">
+                  <input type="number" placeholder="32" />
+                </div>
               </div>
             </div>
             <div class="form-row">
               <div class="input-group">
                 <label for="birthday">Birthday:</label>
-                <input type="date" id="birthday" />
+                <div class="input-wrapper">
+                  <input type="date" id="birthday" />
+                </div>
               </div>
             </div>
             <div class="form-row">
@@ -89,13 +121,15 @@
               </div>
               <div class="input-group">
                 <label for="colors">Pick a Color:</label>
-                <select multiple name="colors" id="colors">
-                  <option value="1">Green</option>
-                  <option value="2">Blue</option>
-                  <option value="3">Red</option>
-                  <option value="4">Yellow</option>
-                  <option value="5">Black</option>
-                </select>
+                <div class="input-wrapper">
+                  <select multiple name="colors" id="colors">
+                    <option value="1">Green</option>
+                    <option value="2">Blue</option>
+                    <option value="3">Red</option>
+                    <option value="4">Yellow</option>
+                    <option value="5">Black</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="form-row">

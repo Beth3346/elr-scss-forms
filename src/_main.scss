@@ -5,7 +5,7 @@
   $config: extend(
     (
       background-color: $lightest-gray,
-      border-color: $light-gray,
+      border-color: $gray,
       label-color: $text-color,
       border-radius: $border-radius,
     ),
@@ -55,10 +55,47 @@
     }
   }
 
-  small {
+  .input-wrapper,
+  .select-wrapper {
+    position: relative;
+    display: flex;
+    padding-top: 0;
+
+    > .input-icon + [type="text"],
+    > .input-icon + [type="email"],
+    > .input-icon + [type="tel"],
+    > .input-icon + [type="search"],
+    > .input-icon + [type="password"],
+    > .input-icon + [type="date"],
+    > .input-icon + [type="url"],
+    > .input-icon + [type="number"],
+    > .input-icon + select {
+      border-radius: 0 $border-radius $border-radius 0;
+    }
+
+    .input-icon {
+      border-radius: $border-radius 0 0 $border-radius;
+      border: 1px solid $border-color;
+      border-right: 0;
+      background-color: $eggshell;
+      padding: 0 12px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $dark-gray;
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: $base-fontsize * 0.875;
+    }
+  }
+
+  .input-helper-text {
+    flex: 1;
     display: block;
-    color: $text-color;
-    margin: 0 0 $base-fontsize ($base-fontsize * 0.25);
+    color: $dark-gray;
+    font-size: 12px;
+    margin: 0;
     padding: 0;
   }
 
@@ -85,12 +122,31 @@
     color: $text-color;
   }
 
-  input:not([type="submit"]),
+  [type="text"],
+  [type="email"],
+  [type="tel"],
+  [type="search"],
+  [type="password"],
+  [type="date"],
+  [type="url"],
+  [type="number"],
+  select {
+    height: 40px;
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="tel"],
+  [type="search"],
+  [type="password"],
+  [type="date"],
+  [type="url"],
+  [type="number"],
   textarea {
     margin: ($base-fontsize * 0.5) 0;
     padding: 12px;
     @include elr-placeholder {
-      color: $gray;
+      color: $border-color;
     }
 
     &:focus {
@@ -100,7 +156,14 @@
     }
   }
 
-  input:not([type="submit"]),
+  [type="text"],
+  [type="email"],
+  [type="tel"],
+  [type="search"],
+  [type="password"],
+  [type="date"],
+  [type="url"],
+  [type="number"],
   textarea,
   select {
     border: 1px solid $border-color;
@@ -113,7 +176,6 @@
     margin-top: ($base-fontsize * 0.5);
     width: 100%;
     color: $text-color;
-    min-height: 40px;
     border-radius: $border-radius;
 
     &:focus {
@@ -134,6 +196,7 @@
 
   [type="search"] {
     border-radius: 20px;
+    padding: $base-fontsize;
   }
 
   [disabled] {
@@ -347,12 +410,12 @@
 
   &::after {
     content: $icon;
-    font-size: 14px;
-    right: to-rems(15px);
+    font-size: $base-fontsize;
     pointer-events: none;
     position: absolute;
     top: 50%;
-    right: ($base-fontsize * 0.5);
+    right: $base-fontsize * 0.75;
     transform: translateY(-55%);
+    color: $dark-gray;
   }
 }
