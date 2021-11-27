@@ -20,7 +20,7 @@
 
   $input-border: 1px solid $border-color;
 
-  form {
+  .form {
     padding-top: $base-fontsize;
     padding-bottom: $base-fontsize;
     width: 100%;
@@ -37,6 +37,7 @@
         border-radius: $border-radius,
       )
     );
+
     @include base-form-inputs(
       $config: (
         background-color: $lightest-gray,
@@ -131,27 +132,27 @@
     border-radius: $border-radius;
     box-shadow: $shadow;
     // padding-left: 0;
+  }
 
-    form-heading {
-      padding-top: 0;
-      margin-top: 0;
-      margin-bottom: 8px;
-      padding-bottom: 8px;
-      font-size: $base-fontsize * 2;
-      font-weight: 900;
-      color: $secondary-color;
-      border-bottom: $border;
-      font-family: $heading-font;
+  .form-links p {
+    padding: 0;
+    margin: 8px 0 16px;
+    font-size: $base-fontsize * 0.875;
+  }
 
-      @media (max-width: $mobile-width) {
-        font-size: $base-fontsize * 1.5;
-      }
-    }
+  .form-heading {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    font-size: $base-fontsize * 2;
+    font-weight: 900;
+    color: $secondary-color;
+    border-bottom: $border;
+    font-family: $heading-font;
 
-    .form-links p {
-      padding: 0;
-      margin: 8px 0 16px;
-      font-size: $base-fontsize * 0.875;
+    @media (max-width: $mobile-width) {
+      font-size: $base-fontsize * 1.5;
     }
   }
 }
