@@ -36,6 +36,4 @@
   padding: ($base-fontsize * 1.5) 0;
 }
 
-.form {
-  @include elr-form;
-}
+@include elr-form;

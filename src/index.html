@@ -24,190 +24,192 @@
       <div class="content-holder">
         <h1 class="main-heading">Forms</h1>
         <div class="demo-content">
-          <h2 class="subheading">Basic Form</h2>
-          <form class="form">
-            <div class="form-row">
-              <div class="input-group">
-                <label for="fav-animal">Favorite Animal</label>
-                <div class="input-wrapper">
-                  <span class="input-icon"><i class="fa fa-lock"></i></span>
-                  <input id="fav-animal" type="text" placeholder="penguins" />
+          <div class="form-holder">
+            <h2 class="form-heading">Basic Form</h2>
+            <form class="form">
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="fav-animal">Favorite Animal</label>
+                  <div class="input-wrapper">
+                    <span class="input-icon"><i class="fa fa-lock"></i></span>
+                    <input id="fav-animal" type="text" placeholder="penguins" />
+                  </div>
+                  <small class="input-helper-text">This is some helper text</small>
                 </div>
-                <small class="input-helper-text">This is some helper text</small>
-              </div>
-              <div class="input-group">
-                <label for="fav-place">Favorite Place</label>
-                <div class="input-wrapper">
-                  <input id="fav-place" type="text" placeholder="Italy" />
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="phone-number">Phone:</label>
-                <div class="input-wrapper">
-                  <input
-                    id="phone-number"
-                    type="tel"
-                    placeholder="555-555-5555"
-                  />
+                <div class="input-group">
+                  <label for="fav-place">Favorite Place</label>
+                  <div class="input-wrapper">
+                    <input id="fav-place" type="text" placeholder="Italy" />
+                  </div>
                 </div>
               </div>
-              <div class="input-group">
-                <label for="email-address">Email Address</label>
-                <div class="input-wrapper">                  
-                  <input
-                    id="email-address"
-                    type="email"
-                    placeholder="foo@bar.com"
-                  />
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="phone-number">Phone:</label>
+                  <div class="input-wrapper">
+                    <input
+                      id="phone-number"
+                      type="tel"
+                      placeholder="555-555-5555"
+                    />
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="email-address">Email Address</label>
+                  <div class="input-wrapper">                  
+                    <input
+                      id="email-address"
+                      type="email"
+                      placeholder="foo@bar.com"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="search">Search</label>
-                <div class="input-wrapper">                  
-                  <input
-                    id="search"
-                    type="search"
-                  />
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="search">Search</label>
+                  <div class="input-wrapper">                  
+                    <input
+                      id="search"
+                      type="search"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="url">Website:</label>
-                <div class="input-wrapper">
-                  <span class="input-icon">http://</span>
-                  <input id="url" type="url" placeholder="www.foo.com" />
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="url">Website:</label>
+                  <div class="input-wrapper">
+                    <span class="input-icon">http://</span>
+                    <input id="url" type="url" placeholder="www.foo.com" />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="password">Password</label>
-                <div class="input-wrapper">
-                  <input id="password" type="password" placeholder="password" />
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="password">Password</label>
+                  <div class="input-wrapper">
+                    <input id="password" type="password" placeholder="password" />
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="age">Age:</label>
+                  <div class="input-wrapper">
+                    <input type="number" placeholder="32" />
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="birthday">Birthday:</label>
+                  <div class="input-wrapper">
+                    <input type="date" id="birthday" />
+                  </div>
                 </div>
               </div>
-              <div class="input-group">
-                <label for="age">Age:</label>
-                <div class="input-wrapper">
-                  <input type="number" placeholder="32" />
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="colors">Pick a Color:</label>
+                  <div class="select-wrapper">
+                    <select name="colors" id="colors">
+                      <option value="1">Green</option>
+                      <option value="2">Blue</option>
+                      <option value="3">Red</option>
+                      <option value="4">Yellow</option>
+                      <option value="5">Black</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <label for="colors">Pick a Color:</label>
+                  <div class="input-wrapper">
+                    <select multiple name="colors" id="colors">
+                      <option value="1">Green</option>
+                      <option value="2">Blue</option>
+                      <option value="3">Red</option>
+                      <option value="4">Yellow</option>
+                      <option value="5">Black</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-              <div class="input-group">
-                <label for="birthday">Birthday:</label>
-                <div class="input-wrapper">
-                  <input type="date" id="birthday" />
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="locations">Pick a Location:</label>
+                  <div class="select-wrapper">
+                    <span class="input-icon"><i class="fa fa-map-pin"></i></span>
+                    <select name="locations" id="locations">
+                      <option value="1">Alaska</option>
+                      <option value="2">Alabama</option>
+                      <option value="3">Arizona</option>
+                      <option value="4">California</option>
+                      <option value="5">Colorado</option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="colors">Pick a Color:</label>
-                <div class="select-wrapper">
-                  <select name="colors" id="colors">
-                    <option value="1">Green</option>
-                    <option value="2">Blue</option>
-                    <option value="3">Red</option>
-                    <option value="4">Yellow</option>
-                    <option value="5">Black</option>
-                  </select>
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="color">Pick a Color:</label>
+                  <ul class="input-color-picker">
+                    <li>
+                      <button
+                        type="button"
+                        style="background-color: red"
+                        class="button-color-swatch active"
+                        aria-label="red"
+                      ></button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        style="background-color: blue"
+                        class="button-color-swatch"
+                        aria-label="blue"
+                      ></button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        style="background-color: yellow"
+                        class="button-color-swatch"
+                        aria-label="yellow"
+                      ></button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        style="background-color: green"
+                        class="button-color-swatch"
+                        aria-label="green"
+                      ></button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        style="background-color: black"
+                        class="button-color-swatch"
+                        aria-label="black"
+                      ></button>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="input-group">
-                <label for="colors">Pick a Color:</label>
-                <div class="input-wrapper">
-                  <select multiple name="colors" id="colors">
-                    <option value="1">Green</option>
-                    <option value="2">Blue</option>
-                    <option value="3">Red</option>
-                    <option value="4">Yellow</option>
-                    <option value="5">Black</option>
-                  </select>
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="comment">Comment:</label>
+                  <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
                 </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="locations">Pick a Location:</label>
-                <div class="select-wrapper">
-                  <span class="input-icon"><i class="fa fa-map-pin"></i></span>
-                  <select name="locations" id="locations">
-                    <option value="1">Alaska</option>
-                    <option value="2">Alabama</option>
-                    <option value="3">Arizona</option>
-                    <option value="4">California</option>
-                    <option value="5">Colorado</option>
-                  </select>
-                </div>
+              <div class="form-buttons">
+                <p class="form-disclaimer">
+                  By submitting this form, you agree to the <a href="/privacy-policy">Privacy Policy</a>
+                </p>
+                <button type="submit" class="button">Submit</button>
+                <button type="submit" disabled class="button">
+                  Can't Click Here
+                </button>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="color">Pick a Color:</label>
-                <ul class="input-color-picker">
-                  <li>
-                    <button
-                      type="button"
-                      style="background-color: red"
-                      class="button-color-swatch active"
-                      aria-label="red"
-                    ></button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      style="background-color: blue"
-                      class="button-color-swatch"
-                      aria-label="blue"
-                    ></button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      style="background-color: yellow"
-                      class="button-color-swatch"
-                      aria-label="yellow"
-                    ></button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      style="background-color: green"
-                      class="button-color-swatch"
-                      aria-label="green"
-                    ></button>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      style="background-color: black"
-                      class="button-color-swatch"
-                      aria-label="black"
-                    ></button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="input-group">
-                <label for="comment">Comment:</label>
-                <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-              </div>
-            </div>
-            <div class="form-buttons">
-              <p class="form-disclaimer">
-                By submitting this form, you agree to the <a href="/privacy-policy">Privacy Policy</a>
-              </p>
-              <button type="submit" class="button">Submit</button>
-              <button type="submit" disabled class="button">
-                Can't Click Here
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
           <hr>
           <form class="form">
             <h2 class="subheading">Checkbox Options</h2>
