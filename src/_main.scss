@@ -115,15 +115,15 @@
     .form-message {
       margin: 16px;
     }
+  }
 
-    // *: color picker
-    .input-color-picker {
-      @include elr-color-picker(
-        $config: (
-          border-color: $border-color,
-        )
-      );
-    }
+  // *: color picker
+  .input-color-picker {
+    @include elr-color-picker(
+      $config: (
+        border-color: $border-color,
+      )
+    );
   }
 
   .form-holder {
@@ -169,6 +169,7 @@
 
   display: flex;
   list-style: none;
+  padding-left: 0;
 
   .button-color-swatch {
     cursor: pointer;
