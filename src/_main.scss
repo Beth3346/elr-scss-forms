@@ -132,6 +132,10 @@
     border-radius: $border-radius;
     box-shadow: $shadow;
     // padding-left: 0;
+
+    form {
+      padding-bottom: 0;
+    }
   }
 
   .form-links p {
@@ -253,8 +257,14 @@
       padding: 0;
       margin: $base-fontsize $base-fontsize $base-fontsize 0;
 
+      p {
+        padding: 0;
+        margin: 0;
+      }
+
       .control-label-support {
         font-size: 13px;
+        margin-top: $base-fontsize * 0.25;
       }
     }
 
@@ -329,6 +339,7 @@
     font-size: $base-fontsize * 0.875;
     font-weight: 400;
     margin: ($base-fontsize * 0.25) 0;
+    padding-bottom: 0;
     letter-spacing: 0;
   }
 }
