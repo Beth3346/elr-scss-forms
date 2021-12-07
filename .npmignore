@@ -23,4 +23,5 @@
 /.github
 /.parcel-cache
 /.netlify
+/dist
 netlify.toml
